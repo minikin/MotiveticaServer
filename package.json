@@ -1,0 +1,27 @@
+{
+  "name": "motivetica_server",
+  "version": "0.0.1",
+  "description": "Motivetica Server",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Parse",
+    "JS",
+    "Node"
+  ],
+  "author": "Sasha Prokhorenko",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.14.0",
+    "kerberos": "0.0.21",
+    "parse-dashboard": "^1.0.19",
+    "parse-server": "^2.2.23"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/minikin/MotiveticaServer"
+  }
+}
