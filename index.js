@@ -54,5 +54,5 @@ var port = process.env.PORT || 4040;
 var httpServer = require('http').createServer(app);
 httpServer.listen(port, function() {
     console.log('parse server running on port ' + port + '.');
-    console.log('Visit dashboard: 'config.PARSE_SERVER_URL' + '/dashboard'');
+    // console.log('Visit dashboard: 'config.PARSE_SERVER_URL' + '/dashboard'');
 });
