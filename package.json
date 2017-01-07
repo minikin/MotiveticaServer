@@ -1,6 +1,6 @@
 {
   "name": "motivetica_server",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Motivetica Server",
   "main": "index.js",
   "scripts": {
@@ -17,8 +17,8 @@
   "dependencies": {
     "express": "^4.14.0",
     "kerberos": "0.0.21",
-    "parse-dashboard": "^1.0.19",
-    "parse-server": "^2.3.0-alpha1"
+    "parse-dashboard": "^1.0.22",
+    "parse-server": "^2.3.1"
   },
   "repository": {
     "type": "git",
