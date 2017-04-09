@@ -15,10 +15,10 @@
   "author": "Sasha Prokhorenko",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.14.0",
-    "kerberos": "0.0.21",
-    "parse-dashboard": "^1.0.22",
-    "parse-server": "^2.3.1"
+    "express": "^4.15.2",
+    "kerberos": "0.0.23",
+    "parse-dashboard": "^1.0.25",
+    "parse-server": "^2.3.7"
   },
   "repository": {
     "type": "git",
