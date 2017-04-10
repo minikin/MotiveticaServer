@@ -1,6 +1,6 @@
 {
   "name": "motivetica_server",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Motivetica Server",
   "main": "index.js",
   "scripts": {
@@ -10,7 +10,9 @@
   "keywords": [
     "Parse",
     "JS",
-    "Node"
+    "Node",
+    "API",
+    "Server"
   ],
   "author": "Sasha Prokhorenko",
   "license": "MIT",

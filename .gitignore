@@ -3,6 +3,7 @@
 
 ### Ignore App keys ###
 /app.config.json
+/config
 
 ### macOS ###
 *.DS_Store

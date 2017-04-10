@@ -1,11 +1,20 @@
-var express = require('express');
-var ParseServer = require('parse-server').ParseServer;
-var ParseDashboard = require('parse-dashboard');
-var path = require('path');
-var app = express();
-var config = require('./app.config.json');
+const os = require('os');
+const express = require('express');
+const ParseServer = require('parse-server').ParseServer;
+const ParseDashboard = require('parse-dashboard');
+const path = require('path');
+const app = express();
+const currentOS = os.type();
+let config = '';
 
-var api = new ParseServer({
+if (currentOS == 'Darwin') {
+   config = require('./app.local.dev.config.json');
+   console.log('In production generate real secure keys!');
+} else {
+   config = require('./app.config.json');
+}
+
+const api = new ParseServer({
   // Connection string for your MongoDB database
   databaseURI:  config.PARSE_SERVER_DATABASE_URI,
   // Absolute path to your Cloud Code
@@ -19,7 +28,7 @@ var api = new ParseServer({
 });
 
 // Parse Dashboard settings
-var dashboardConfig = {
+const dashboardConfig = {
 	"allowInsecureHTTP": true,
 	"apps": [
     {
@@ -37,7 +46,7 @@ var dashboardConfig = {
   ]
 };
 
-var dashboard = new ParseDashboard(dashboardConfig, dashboardConfig.allowInsecureHTTP);
+const dashboard = new ParseDashboard(dashboardConfig, dashboardConfig.allowInsecureHTTP);
 
 // make the Parse Server available at /parse
 app.use('/parse', api);
@@ -50,9 +59,9 @@ app.get('/', function(req, res) {
   res.status(200).send('Motivetica : I dream of being a website!');
 });
 
-var port = process.env.PORT || 4040;
-var httpServer = require('http').createServer(app);
+const port = process.env.PORT || 4040;
+const httpServer = require('http').createServer(app);
 httpServer.listen(port, function() {
-    console.log('parse server running on port ' + port + '.');
-    // console.log('Visit dashboard: 'config.PARSE_SERVER_URL' + '/dashboard'');
+    console.log('Parse server running on:  http://localhost:' + port + '/parse');
+    console.log('Visit dashboard: ' + 'http://localhost:' + port + '/dashboard');
 });
